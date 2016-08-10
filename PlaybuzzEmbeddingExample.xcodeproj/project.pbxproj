@@ -12,6 +12,8 @@
 		855C87C21D5B5E210001F6D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855C87C01D5B5E210001F6D5 /* Main.storyboard */; };
 		855C87C41D5B5E210001F6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 855C87C31D5B5E210001F6D5 /* Assets.xcassets */; };
 		855C87C71D5B5E210001F6D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855C87C51D5B5E210001F6D5 /* LaunchScreen.storyboard */; };
+		855C87CF1D5B5E6F0001F6D5 /* PlaybuzzWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C87CE1D5B5E6F0001F6D5 /* PlaybuzzWebView.swift */; };
+		855C87D11D5B5E770001F6D5 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C87D01D5B5E770001F6D5 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		855C87C31D5B5E210001F6D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		855C87C61D5B5E210001F6D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		855C87C81D5B5E210001F6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		855C87CE1D5B5E6F0001F6D5 /* PlaybuzzWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybuzzWebView.swift; sourceTree = "<group>"; };
+		855C87D01D5B5E770001F6D5 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				855C87BC1D5B5E210001F6D5 /* AppDelegate.swift */,
 				855C87BE1D5B5E210001F6D5 /* ViewController.swift */,
+				855C87D01D5B5E770001F6D5 /* SettingsTableViewController.swift */,
+				855C87CE1D5B5E6F0001F6D5 /* PlaybuzzWebView.swift */,
 				855C87C01D5B5E210001F6D5 /* Main.storyboard */,
 				855C87C31D5B5E210001F6D5 /* Assets.xcassets */,
 				855C87C51D5B5E210001F6D5 /* LaunchScreen.storyboard */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				855C87D11D5B5E770001F6D5 /* SettingsTableViewController.swift in Sources */,
 				855C87BF1D5B5E210001F6D5 /* ViewController.swift in Sources */,
+				855C87CF1D5B5E6F0001F6D5 /* PlaybuzzWebView.swift in Sources */,
 				855C87BD1D5B5E210001F6D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
