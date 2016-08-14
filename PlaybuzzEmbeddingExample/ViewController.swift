@@ -19,7 +19,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     static var showFacebookComments = true
     static var showItemInfo = true
     
-    let itemAlias = "nicolediver10/here-is-everything-weve-been-eating-and-drinking-since-1991"
+    let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
     let userID = UIDevice.currentDevice().identifierForVendor!.UUIDString
     let companyDomain = "http://www.playbuzz.com"
     
