@@ -20,7 +20,7 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
     static var showItemInfo = true
     
     let itemAlias = "shpaltman/10-best-commercials-for-the-olympic-games-rio-2016"
-    let userID = UIDevice.currentDevice().identifierForVendor!.UUIDString
+    let userID = UIDevice.current.identifierForVendor!.uuidString
     let companyDomain = "http://www.playbuzz.com"
     
     override func viewDidLoad() {
@@ -28,21 +28,21 @@ class ViewController: UIViewController, PlaybuzzWebViewProtocol, SettingsTableVi
         playbuzzView.delegate = self
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.reloadItem()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!)
     {
-        if let viewController = segue.destinationViewController as? SettingsTableViewController
+        if let viewController = segue.destination as? SettingsTableViewController
         {
             viewController.delegate = self
         }
     }
     
     //MARK: PlaybuzzWebView Protocol
-    func resizePlaybuzzContainer(height: CGFloat){
+    func resizePlaybuzzContainer(_ height: CGFloat){
         webViewConstraint.constant = height
         containerHeight.constant = playbuzzView.frame.origin.y + height
     }

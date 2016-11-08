@@ -38,15 +38,15 @@ class PlaybuzzWebView: UIView, WKScriptMessageHandler{//, WKNavigationDelegate, 
         configuration.userContentController = contentController
         configuration.allowsInlineMediaPlayback = true
         
-        webView = WKWebView(frame: CGRectMake(0, 0, self.frame.width, 250), configuration: configuration)
-        webView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .New, context: nil)
-        webView.configuration.userContentController.addScriptMessageHandler(self,name: "callbackHandler")
+        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 250), configuration: configuration)
+        webView.autoresizingMask = UIViewAutoresizing.flexibleWidth
+        webView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        webView.configuration.userContentController.add(self,name: "callbackHandler")
         
         self.addSubview(webView)
     }
     
-    func reloadItem(userID: String,
+    func reloadItem(_ userID: String,
                     itemAlias:String,
                     showRecommendations: Bool,
                     showShareButton: Bool,
@@ -54,7 +54,7 @@ class PlaybuzzWebView: UIView, WKScriptMessageHandler{//, WKNavigationDelegate, 
                     showItemInfo: Bool,
                     companyDomain: String)
     {
-        if webView.loading {
+        if webView.isLoading {
             webView.stopLoading()
         }
         
@@ -67,10 +67,10 @@ class PlaybuzzWebView: UIView, WKScriptMessageHandler{//, WKNavigationDelegate, 
                                          showShareButton ? "true":"false",
                                          showFacebookComments ? "true":"false",
                                          showItemInfo ? "true":"false")
-        webView.loadHTMLString(embedString, baseURL: NSURL(string:companyDomain))
+        webView.loadHTMLString(embedString, baseURL: URL(string:companyDomain))
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>)
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
     {
         if keyPath == "contentSize"
         {
@@ -82,12 +82,12 @@ class PlaybuzzWebView: UIView, WKScriptMessageHandler{//, WKNavigationDelegate, 
     {
         webView.sizeToFit()
         let webViewContentHeight:CGFloat = webView.scrollView.contentSize.height
-        webView.frame = CGRectMake(0, 0, self.frame.width, webViewContentHeight)
+        webView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: webViewContentHeight)
         self.delegate?.resizePlaybuzzContainer(webViewContentHeight)
         
     }
     
-    func userContentController(userContentController: WKUserContentController,didReceiveScriptMessage message: WKScriptMessage)
+    func userContentController(_ userContentController: WKUserContentController,didReceive message: WKScriptMessage)
     {
         
     }
@@ -96,6 +96,6 @@ class PlaybuzzWebView: UIView, WKScriptMessageHandler{//, WKNavigationDelegate, 
 // MARK: - EmbededWebViewControllerProtocol
 protocol PlaybuzzWebViewProtocol: class
 {
-    func resizePlaybuzzContainer(height: CGFloat)
+    func resizePlaybuzzContainer(_ height: CGFloat)
 }
 

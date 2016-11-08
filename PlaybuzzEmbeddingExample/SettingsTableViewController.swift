@@ -12,9 +12,9 @@ class SettingsTableViewController: UITableViewController {
     
     weak var delegate: SettingsTableViewControllerProtocol?
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath)
+        if let cell = tableView.cellForRow(at: indexPath)
         {
             switch indexPath.row {
             case 0:
@@ -36,15 +36,15 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    func shouldShowCheckMark(should: Bool, inCell cell: UITableViewCell)
+    func shouldShowCheckMark(_ should: Bool, inCell cell: UITableViewCell)
     {
         if (should)
         {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         else
         {
-            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.accessoryType = UITableViewCellAccessoryType.none
         }
     }
 }
